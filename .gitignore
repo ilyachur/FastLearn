@@ -1,0 +1,9 @@
+# Some directories
+system
+bin_pc/
+bin_book/
+
+# Binaries
+FastLearn.app
+FastLearn
+
