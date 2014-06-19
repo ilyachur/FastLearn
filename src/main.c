@@ -5,7 +5,9 @@
  *      Author: ichuraev
  */
 #include <inkview.h>
+#include "functions.h"
 
 int main() {
-	printf("AAAA");
+	InkViewMain(main_handler);
+	return 0;
 }

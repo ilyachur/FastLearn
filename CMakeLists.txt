@@ -113,7 +113,7 @@ SET (SRC_LIST
 	${CMAKE_SOURCE_DIR}/src/main.c)	
 
 ADD_EXECUTABLE (FastLearn 
-		${SRC_LIST}) 
+		${SRC_LIST} ${CMAKE_SOURCE_DIR}/src/functions.c) 
 
 
 INCLUDE_DIRECTORIES(${TARGET_INCLUDE})
