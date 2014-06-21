@@ -5,7 +5,9 @@
  *      Author: ichuraev
  */
 #include <inkview.h>
-#include "functions.h"
+#include "MainWindow.h"
+
+using namespace FastLearn;
 
 int main() {
 	InkViewMain(main_handler);

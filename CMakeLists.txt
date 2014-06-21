@@ -105,15 +105,15 @@ ELSE ()
 ENDIF (CMAKE_BUILD_TYPE STREQUAL "Debug")
 
 # генерировать файл image.c
-ADD_CUSTOM_COMMAND(
- 	OUTPUT ${CMAKE_SOURCE_DIR}/cimages/images.c
-	COMMAND ${CMAKE_SOURCE_DIR}/${TOOLCHAIN_PATH}/bin/pbres -c ${CMAKE_SOURCE_DIR}/cimages/images.c ${CMAKE_SOURCE_DIR}/images/*.bmp)
+#ADD_CUSTOM_COMMAND(
+# 	OUTPUT ${CMAKE_SOURCE_DIR}/cimages/images.c
+#	COMMAND ${CMAKE_SOURCE_DIR}/${TOOLCHAIN_PATH}/bin/pbres -c ${CMAKE_SOURCE_DIR}/cimages/images.c ${CMAKE_SOURCE_DIR}/images/*.bmp)
 
 SET (SRC_LIST
-	${CMAKE_SOURCE_DIR}/src/main.c)	
+	${CMAKE_SOURCE_DIR}/src/main.cpp)	
 
 ADD_EXECUTABLE (FastLearn 
-		${SRC_LIST} ${CMAKE_SOURCE_DIR}/src/functions.c) 
+		${SRC_LIST} ${CMAKE_SOURCE_DIR}/src/MainWindow.cpp) 
 
 
 INCLUDE_DIRECTORIES(${TARGET_INCLUDE})
