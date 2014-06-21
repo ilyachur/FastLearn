@@ -5,14 +5,16 @@
  *      Author: ichuraev
  */
 #include <inkview.h>
+#include <fstream>
+#include <cstdio>
 #include "MainWindow.h"
 
 FastLearn::MainWindow * FastLearn::MainWindow::obj_mw = NULL;
 
 imenu FastLearn::MainWindow::menu1[] = {
 	{ ITEM_HEADER,  0, (char*)"Menu", NULL },
-	{ ITEM_ACTIVE, 101, (char*)"Say 'Hi'", NULL },
-	{ ITEM_ACTIVE, 102, (char*)"Run Calc'", NULL },
+	{ ITEM_ACTIVE, 101, (char*)"Say hello", NULL },
+	{ ITEM_ACTIVE, 102, (char*)"Run Dictionary", NULL },
 	{ ITEM_ACTIVE, 103, (char*)"Exit", NULL },
 	{  0,  0, NULL, NULL }
 };
@@ -63,7 +65,8 @@ void FastLearn::menu_handler(int index) {
 	case 102:
 		p = fork();
 		if (!p) {
-			execv("/mnt/ext1/applications/calc.app", NULL);
+			char * argc[] = {0};
+			execv("/ebrmain/bin/Dictionary.app", argc);
 		} else {
 			wait(&status);
 			mw->screen_repaint();
@@ -84,7 +87,7 @@ int FastLearn::main_handler(int type, int par1, int par2) {
 	MainWindow *mw = MainWindow::create_window();
 
 	if (type == EVT_INIT) {
-		//arialb12 = OpenFont("DroidSans", 12, 1);
+		//check_dictionary();
 	}
 
 	if (type == EVT_SHOW) {

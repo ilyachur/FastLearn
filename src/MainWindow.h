@@ -11,7 +11,6 @@
 #include <inkview.h>
 
 namespace FastLearn {
-
 	int main_handler(int type, int par1, int par2);
 	void menu_handler(int index);
 
